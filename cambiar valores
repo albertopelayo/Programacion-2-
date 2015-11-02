@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+void cambiar (int *x, int *y){
+	int c;
+	c=*x;
+    *x=*y;
+	*y=c;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+    
+    int a;
+	int b;
+	cout<<"ingrese X "<<endl;
+	cin>>a;
+	cout<<"ingrese Y"<<endl;
+	cin>>b;
+	cambiar ( &a, &b);
+	cout<<"X= "<<a<<endl;
+    cout<<"Y= "<<b<<endl;
+	system ("pause");
+	return 0;
+}
+
