@@ -1,0 +1,74 @@
+// Programa 8 ejercicio prueba.cpp : Ordenar hasta 20 numeros por metodo de seleccion
+//
+
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{int opc;
+int i=0;
+int numn=0;
+int numero [20];
+int *pf;
+int *po;
+ cout<<"Bienvenido usuario"<<endl<<endl;
+ do{
+ cout<<"Elija una de las sigiuientes opciones"<<endl<<endl;
+ cout<<"1: Ordenar."<<endl;
+ cout<<"2: Salir."<<endl<<endl;
+ cin>>opc;
+ switch (opc) {
+	 case 1: {
+		 cout<<"ORDENAR"<<endl<<endl;
+		 cout<<"Cuantos numeros deseas ordenar"<<endl;
+		 cin>>numn;
+		 cout<<endl;
+		 if (numn>20){
+			 cout<<"opcion no valida"<<endl;
+			 break;
+		 }
+		 for (i=0; i<=numn-1; i++){
+         cout<<"Ingrese el numero "<<i+1<<endl;
+		 cin>>numero[i];
+		 }
+		 //p++;//p+=sizeof(char);
+         //p+=sizeof(int);//p+=4;
+		 cout<<endl;
+		 for (int w=0; w<=numn-1; w++){
+			 cout<<numero[w]<<" ";
+		 }
+		 cout<<endl;
+		  for(int x=0; x<numn-1; x++)
+		 for(int j=0; j<numn-1; j++){
+		 po=&numero[j];
+		 pf=&numero[j+1];
+
+		 if(*po>*pf){
+         int k = *po;
+		 *po=*pf;
+		 *pf=k;
+		 for (int h =0; h<numn; h++){
+			 cout<<numero[h]<<"  ";
+		 }
+         cout<<endl;
+		 }
+		 cin.get();
+		 }
+
+		 cin.get();
+		 if (system("CLS")) system ("clear");
+			 }
+			 break;
+	 case 2: 
+		 break;
+	 default: cout<<"Opcion no valida"<<endl;
+		 break;
+
+ }
+ }while (opc!=2);
+
+	return 0;
+}
