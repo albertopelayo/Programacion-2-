@@ -1,0 +1,186 @@
+#include "stdafx.h"
+#include "iostream"
+#include "cstdlib"
+#include "conio.h"
+#include "stdio.h"
+using namespace std;
+
+int j;
+int nummulti[11];
+int suma;
+int numero;
+
+char portada(){
+system ("color 49");
+cout<<"================================================================================"<<endl;
+cout<<"                     Centro de Ense\244anza T\202cnica Industrial               "<<endl<<endl;
+cout<<"================================================================================"<<endl<<endl<<endl;
+cout<<"Informaci\242n del programador:"<<endl;
+cout<<"----------------------------"<<endl;
+cout<<"Nombre: Alberto Javier Pelayo Brambila"<<endl;
+cout<<"Estudios:"<<endl;
+cout<<"* T\202cnico en Informatica y Computaci\242n"<<endl;
+cout<<"* Tercer semestre de Tecn\242logo en Desarrollo de Software"<<endl;
+cout<<"Edad: 16 años"<<endl<<endl<<endl;
+cout<<"Informaci\242n de contacto:"<<endl;
+cout<<"------------------------"<<endl;
+cout<<"Celular: 3353051223"<<endl;
+cout<<"Tel\202fono:36273919"<<endl;
+cout<<"Email: beto11070@gmail.com"<<endl<<endl<<endl;
+cout<<"Informaci\242n de la escuela:"<<endl;
+cout<<"--------------------------"<<endl;
+cout<<"Escuela: Centro de Ense\244anza T\202cnica Industrial"<<endl;
+cout<<"Plantel: Colomos"<<endl;
+cout<<"Registro: 14300308"<<endl;
+cout<<"Grupo: 3°B1"<<endl;
+cout<<"Materia: Programaci\242n II"<<endl;
+cout<<"Profesora: Sonia Erika Iba\244ez de la Torre"<<endl<<endl;
+system ("pause");
+return 0;
+}
+
+int sumar (int a, int b)
+{
+	return (a) + (b);
+}
+
+int ordenar(){
+	int a[10], i, j, paso;
+	cout<<"Hola usuario"<<endl;
+	cout<<"Ingrese los numeros a ordenar"<<endl<<endl;
+	for(i=0; i<10; i++){
+		cout<<"Ingrese el numero  "<<i+1<<"    ";
+		cin>> a[i];
+	}
+
+	cout<<endl<<endl;
+	cout<<"Los numeros desordenados son: "<<endl;
+	for(i=0; i<10; i++){
+		cout<<a[i]<<"   ";
+	}
+
+	for(i=10; i>0; i--){
+		for(j=1; j<i; j++){
+			if(a[j]<a[j-1]){
+				paso=a[j-1];
+				a[j-1]=a[j];
+				a[j]=paso;
+			}
+		}
+	}
+
+	cout<<endl<<endl;
+	cout<<"Los numeros ordenados de menor a mayor son: "<<endl;
+	for(i=0; i<10; i++){
+		cout<<a[i]<<"   ";
+	}
+
+
+	for(i=10; i>0; i--){
+		for(j=1; j<i; j++){
+			if(a[j]>a[j-1]){
+				paso=a[j-1];
+				a[j-1]=a[j];
+				a[j]=paso;
+			}
+		}
+	}
+
+	cout<<endl<<endl;
+	cout<<"Los numeros ordenados de mayor a menor son: "<<endl;
+	for(i=0; i<10; i++){
+		cout<<a[i]<<"   ";
+	}
+
+    system("pause");
+	return 0;
+}
+
+void funcionsvr ()
+{
+	cout<<"Esta funcion es una funcion sin valor de retorno"<<endl;
+	system ("pause");
+}
+int multi ( int num)
+{
+	for (j=1; j<11; j++)
+	{
+		nummulti[j]=num*j;
+		cout<<j<<" X "<<num<<" = "<<nummulti[j]<<endl;
+		suma=suma+nummulti[j];
+	}
+	cout<<"El resultado de la suma es:  ";
+	return suma;
+	
+}
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int opc;
+	int num1;
+	int num2;
+	int suma;
+	cout<<"Bienvenido usuario"<<endl;
+	do {
+	system ("color 07");
+	cout<<"El men\243 es el siguiente"<<endl;
+	cout<<"1: Mostrar la portada"<<endl;
+	cout<<"2: Sumar 2 n\243meros"<<endl; 
+	cout<<"3: Organizar 10 n\243meros"<<endl; 
+	cout<<"4: Mostrar una funci\242n void"<<endl; 
+	cout<<"5: Mostrar la tabla de multiplicar de un n\243mero"<<endl<<endl<<endl; 
+	cout<<"0: salir"<<endl<<endl;
+	cout<<"Ingrese la opci\242n que desea ejecutar"<<endl<<endl;
+    cin>>opc;
+	if (system("CLS")) system ("clear");
+	
+	switch (opc){
+	case 0: break;
+	case 1: 
+		portada ();
+		if (system("CLS")) system ("clear");
+		break;
+	
+	case 2: 
+		system ("color 3D");
+		cout<<"Suma de numeros"<<endl<<endl;
+		cout<<"Ingrese el primer numero a sumar: ";
+		cin>>num1;
+		cout<<endl<<"Ingrese el segundo numero a sumar: ";
+		cin>>num2;
+		suma = sumar(num1, num2);
+		cout<<endl<<"El resultado de la suma es: "<<suma<<endl<<endl;
+		system ("pause");
+		if (system("CLS")) system ("clear");
+		break;
+	case 3:
+		system ("color 67");
+		ordenar();
+		if (system("CLS")) system ("clear");
+		break;
+	case 4: 
+		system ("color 89");
+        funcionsvr ();
+		if (system("CLS")) system ("clear");
+		break;
+	case 5: 
+		system ("color A3");
+        cout<<"Ingrese el numero a multiplicar:   ";
+	    cin>>numero;
+	    cout<<endl<<endl;
+	    cout<<"Tabla de multiplicacion"<<endl<<endl;
+	    cout<<multi (numero);
+	    cout<<endl<<endl;
+    	system ("pause");
+		if (system("CLS")) system ("clear");
+		break;
+	default: 
+		system ("color 74");
+		cout<< "Opci\242n no valida favor de insertar una opci\242n valida  del men\243"<<endl<<endl;
+		system ("pause");
+		if (system("CLS")) system ("clear");
+		break;
+	}
+	} while (opc!=0);
+	
+	return 0;
+}
