@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	float num=0;
+    int i=0;
+	float numprom[20];
+	float prom;
+	float numtotal=0;
+
+	cout<<"Hola usuario favor de ingresar el numero de calificaciones a promediar"<<endl<<endl;
+	cin>>num;
+	cout<<endl<<endl;
+	if (num<=20){
+	for (i=0;i<=num-1;i++){
+		cout<<"Favor de ingresar el numero "<< i+1<<endl;
+		cin>>numprom[i];
+		numtotal=numtotal+numprom[i];
+	}
+	prom=numtotal/num;
+	cout<<"El promedio es: "<<prom<<endl<<endl;
+	}
+	else cout<<"Numero no valido favor de ingresar un numero menor o igual a 20"<<endl<<endl;
+    system ("pause");
+		
+	return 0;
+}
