@@ -1,0 +1,61 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int i=0;
+	int n=0;
+	int opc;
+	char cadena[30];
+	char *p;
+	
+	cout<<"Bienvenido usuario"<<endl<<endl;
+	do{
+    cout<<"Favor de ingresar una de las opciones"<<endl;
+	cout<<"1: Convertir."<<endl<<"2: Contar."<<endl<<"3: Salir."<<endl<<endl;
+	cin>>opc;
+
+	switch (opc)
+	{
+	case 1:  cout<<"CONVERTIR"<<endl;
+	cout<<"Ingrese la cadena"<<endl;
+	cin.sync();
+	cin.getline (cadena,30);
+	p=&cadena[0];
+
+	 while(*p!=NULL) {
+		 if(*p>='a'&&*p<='z')
+		*p=toupper(*p);
+		 p++;
+	}
+	cout<<endl<<cadena;
+	cin.get();
+	if (system("CLS")) system ("clear");
+	break;
+
+	case 2: cout<<"CONTAR"<<endl;
+	cout<<"Ingrese la cadena"<<endl;
+	cin.sync();
+	cin.getline (cadena,30);
+	p=&cadena[0];
+
+		while(*p!=NULL) {
+	 if(*p>='0' && *p<='9')
+	 n++;
+		p++;}
+		cout<<endl<<"Numero de numeros en la cadena: "<<n;
+	cin.get();
+	if (system("CLS")) system ("clear");
+	break;
+	case 3: break;
+	default: cout<<"Opcion no valida favor de ingresar una opcion del menu"<<endl<<endl;
+		cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+		}
+	}while(opc!=3);
+	return 0;
+}
