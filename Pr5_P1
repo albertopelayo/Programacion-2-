@@ -1,0 +1,73 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+char * convertir (char *p){
+	
+	 while(*p!=NULL) {
+		 if(*p>='A'&&*p<='Z')
+		*p=tolower(*p);
+		 p++;
+	
+	 }
+	 return p;
+}
+bool checar (char *po, char *pf){
+	while (po<pf){
+		while (*po==' '){
+			po++;}
+		while (*pf==' '){
+			pf--;}
+		if (*po!=*pf){
+			return false;}
+	po++;
+	pf--;
+}
+return true;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int opc;
+	char cadena[30];
+	char *p;
+
+	cout<<"Bienvenido usuario"<<endl;
+	do {
+	system ("color 07");
+	cout<<"Elige una de las siguientes opciones"<<endl;
+	cout<<"1: Verificar si una cadena es palindroma"<<endl;
+	cout<<"2: Salir."<<endl;
+	cin>>opc;
+	switch (opc){
+	case 1:{ 
+		cout<<endl<<"Verificar cadena"<<endl<<endl;
+		cout<<"Ingresela cadena a verificar"<<endl<<endl;
+		cin.sync();
+		cin.getline (cadena,30);
+		cout<<endl<<"La cadena ";
+		p=&cadena[0];
+        char *h = convertir (p);
+ 		if (!checar(cadena, &cadena[strlen(cadena)-1]))
+		{ cout<<"No ";}
+		cout<<"es palindromo"<<endl;
+		cin.get();
+	if (system("CLS")) system ("clear");
+		   }
+	break;
+    case 2: break;
+	default: 
+		if (system("CLS")) system ("clear");
+		system ("color 47");
+		cout<<"Opcion no valida favor de ingresar una opcion del menu"<<endl<<endl;
+		cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+		}
+	}while(opc!=2);
+
+	return 0;
+}
+
