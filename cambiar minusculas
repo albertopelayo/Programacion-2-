@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include "iostream"
+
+
+using namespace std;
+
+int i=0;
+int j;
+void convertir( char cadena[])
+{
+	while (cadena[i]!=0){i++;}
+	j=i;
+	for (i=0;i<j;i++)
+	{ if (cadena[i]!=0||cadena[i]<=122&&cadena[i]>=97)
+	{
+		cadena[i]=cadena[i]-32;
+		cout<<cadena[i];
+	}
+	}
+}
+
+int main ()
+{
+	char cadena[1000];
+	cout<<"Hola usuario bienvenido"<<endl;
+    cout<<"ingrese el texto"<<endl<<endl;
+    cin.getline(cadena,1000);
+	cout<<endl<<endl;
+   convertir (cadena);
+   cout<<endl<<endl;
+	system ("pause");
+
+	return 0;
+}
+
