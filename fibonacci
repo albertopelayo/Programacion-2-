@@ -1,0 +1,47 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+	
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+   int opc;
+   int n;
+   int acu=0;
+   int n1=0;
+   int n2=1;
+   cout<<"Bienvenido usuario"<<endl<<endl;
+   do{
+   cout<<"Ingrese una de las siguientes opciones"<<endl;
+   cout<<"1: Serie Fibonacci"<<endl;
+   cout<<"2: Salir"<<endl;
+   cin>>opc;
+   switch (opc){
+	   case 1: cout<<endl<<"Serie Fibonacci"<<endl;
+		   cout<<"Digie el numero al que quiere que llegue la serie"<<endl;
+		   cin>>n;
+		   cout<<"o+1";
+		   do{
+			   acu=n1+n2;
+			   if (acu<=n)
+			   {
+				   cout<<"+"<<acu;
+				   n1=n2;
+				   n2=acu;
+			   }
+		   }while (acu<=n);
+            system ("pause");
+
+		   cin.get();
+		   	if (system("CLS")) system ("clear");
+		   break;
+	   case 2: break;
+	   default: cout<<"Opcion no valida"<<endl;
+		   break;
+
+   }
+}while(opc!=2);
+
+	return 0;
+}
