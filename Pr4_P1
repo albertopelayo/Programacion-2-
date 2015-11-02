@@ -1,0 +1,71 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+void convertir (char *p){
+	while(*p) {
+		 if((*p>='a')&&(*p<='z'))
+		 {*p=*p-32;}
+	
+		 cout<<*p;
+		 p++;
+	}
+	
+}
+int contar (char *p){
+	int n=0;
+while(*p) {
+	
+	 if(*p>='0' && *p<='9')
+	 n++;
+		p++;}
+		cout<<endl<<"Numero de numeros en la cadena: "<<n;
+		return 0;
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int i=0;
+	int n=0;
+	int opc;
+	char cadena[30];
+	char *p;
+	
+	cout<<"Bienvenido usuario"<<endl<<endl;
+	do{
+    cout<<"Favor de ingresar una de las opciones"<<endl;
+	cout<<"1: Convertir."<<endl<<"2: Contar."<<endl<<"3: Salir."<<endl<<endl;
+	cin>>opc;
+
+	switch (opc)
+	{
+	case 1:  cout<<"CONVERTIR"<<endl;
+	cout<<"Ingrese la cadena"<<endl;
+	cin.sync();
+	cin.getline (cadena,30);
+	convertir (&cadena[0]);
+	cin.get();
+	if (system("CLS")) system ("clear");
+	break;
+
+	case 2: cout<<"CONTAR"<<endl;
+	cout<<"Ingrese la cadena"<<endl;
+	cin.sync();
+	cin.getline (cadena,30);
+	contar (&cadena[0]);
+	cin.get();
+	if (system("CLS")) system ("clear");
+	break;
+	case 3: break;
+	default: cout<<"Opcion no valida favor de ingresar una opcion del menu"<<endl<<endl;
+		cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+		}
+	}while(opc!=3);
+	return 0;
+}
+
+
