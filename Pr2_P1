@@ -1,0 +1,84 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+char cadena[25];
+int numeros[10];
+int checar (char cadena[25]);
+int negativos (int numeros[10]);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int opc;
+	int i;
+	cout<<"Bienvenido usuario"<<endl<<endl;
+	do{
+		cout<<"Favor de escoger una de las siguientes opciones: "<<endl<<"1: Leer una cadena e identificar los caracteres"<<endl<<"2: Llenar un arreglo numerico de 10 valores y retornar cuantos son negativos"<<endl<<"3: SALIR"<<endl<<endl;
+	cin>>opc;
+		switch (opc)
+		{
+	case 1: 
+		cout<<"CADENA"<<endl;
+		cout<<"Introduce la cadena"<<endl;
+		cin.sync();
+		cin.getline (cadena,25);
+		checar (cadena);
+        cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+		
+	case 2: cout<<"NUMEROS"<<endl;
+		cout<<"ingrese los 10 numeros"<<endl;
+		for (i=0; i<=9;i++){
+			cout<<"Ingrese el numero "<<i+1<<endl;
+			cin>>numeros[i];
+		}
+		negativos(numeros);
+		 cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+	case 3: break;
+	default: cout<<"Opcion no valida favor de ingresar una opcion del menu"<<endl<<endl;
+		cin.sync();
+		cin.get();
+		if (system("CLS")) system ("clear");
+		break;
+		}
+	}while(opc!=3);
+	return 0;
+}
+int checar (char cadena[25]){
+	   int i=0; 
+	   int n=0;
+	   int l=0;
+	   int s=0;
+	   while(cadena[i]!=NULL) {
+      cadena[i] = tolower(cadena[i]);
+	 
+	  if (cadena[i]=='a'||cadena[i]=='b'||cadena[i]=='c'||cadena[i]=='d'||cadena[i]=='e'||cadena[i]=='f'||cadena[i]=='g'||cadena[i]=='h'||cadena[i]=='i'||cadena[i]=='j'||cadena[i]=='k'||cadena[i]=='l'||cadena[i]=='m'||cadena[i]=='n'||cadena[i]=='ñ'||cadena[i]=='o'||cadena[i]=='p'||cadena[i]=='q'||cadena[i]=='r'||cadena[i]=='s'||cadena[i]=='t'||cadena[i]=='u'||cadena[i]=='v'||cadena[i]=='w'||cadena[i]=='x'||cadena[i]=='y'||cadena[i]=='z')
+	  {l++;}
+	  else if(cadena[i]=='0'||cadena[i]=='1'||cadena[i]=='2'||cadena[i]=='3'||cadena[i]=='4'||cadena[i]=='5'||cadena[i]=='6'||cadena[i]=='7'||cadena[i]=='8'||cadena[i]=='9')
+      {n++;}
+	  else if(cadena[i]==' '||cadena[i]=='|'||cadena[i]=='°'||cadena[i]=='¬'||cadena[i]=='!'||cadena[i]=='"'||cadena[i]=='#'||cadena[i]=='$'||cadena[i]=='%'||cadena[i]=='&'||cadena[i]=='/'||cadena[i]=='('||cadena[i]==')'||cadena[i]=='='||cadena[i]=='?'||cadena[i]=='¡'||cadena[i]=='¿'||cadena[i]=='<'||cadena[i]=='>'||cadena[i]==','||cadena[i]==';'||cadena[i]=='.'||cadena[i]==':'||cadena[i]=='-'||cadena[i]=='_'||cadena[i]=='´'||cadena[i]=='¨'||cadena[i]=='+'||cadena[i]=='*'||cadena[i]=='~'||cadena[i]=='{'||cadena[i]=='['||cadena[i]=='^'||cadena[i]=='}'||cadena[i]==']'||cadena[i]=='`')
+      {s++;}
+	   i++;
+	   }
+	  cout<<"Numero de letras: "<<l<<endl;
+	  cout<<"Numero de numeros: "<<n<<endl;
+	  cout<<"Numero de simbolos especiales: "<<s<<endl;
+	
+	   return 0;
+}
+
+int negativos (int numeros[10]){
+	int i;
+	int j=0;
+	for (i=0;i<=9;i++){
+	if (numeros[i]<0){j++;}
+	}
+	cout<<endl<<"El numero de numeros negativos es: "<<j<<endl<<endl;
+	return 0;
+	}
