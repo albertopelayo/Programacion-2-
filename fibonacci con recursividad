@@ -1,0 +1,38 @@
+#include "stdafx.h"
+#include "iostream"
+
+using namespace std;
+
+int fibo ( int n){
+	if (n==0){
+		//cout<<"0+";
+	return 0;}
+	else if (n==1){
+		//cout<<"1+";
+		return 1;
+	}
+	else {
+				
+		return fibo(n-1)+fibo(n-2); }
+}
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int resultado;
+	int numero;
+	int i;
+	cout<<"Introduce un entero"<<endl;
+	cin>>numero;
+	cout<<endl<<"0";
+	for(i=1;i<=numero;i++){
+	resultado=fibo(i);
+	if (resultado<=numero){
+	cout<<" + "<<resultado;
+	}
+	else {break;}
+	}
+	cout<<endl;
+	system ("pause");
+	return 0;
+}
+
